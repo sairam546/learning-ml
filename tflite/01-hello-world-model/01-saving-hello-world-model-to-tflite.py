@@ -18,7 +18,6 @@ tf.saved_model.save(model, export_dir)
 
 #Convert the model
 converter = tf.lite.TFLiteConverter.from_saved_model(export_dir)
-converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]
 tflite_model = converter.convert()
 
 #Save the model
